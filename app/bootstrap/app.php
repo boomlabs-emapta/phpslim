@@ -7,6 +7,7 @@ use Ovo\Modules\SModuleManager;
 use Ovo\Helpers\ConfigWorker;
 use Ovo\Factory\AppFactory;
 use App\Source\Decorators\SlimCMS;
+use \App\Controllers\HomepageController;
 
 session_start();
 
@@ -14,6 +15,7 @@ define('ROOT_PATH', str_replace("/", DIRECTORY_SEPARATOR, realpath(__DIR__ . '/.
 
 define('APP_PATH', ROOT_PATH . 'app' . DIRECTORY_SEPARATOR);
 define('SLIM_PATH', ROOT_PATH . 'src' . DIRECTORY_SEPARATOR);
+define('ROUTES_PATH', ROOT_PATH . 'routes' . DIRECTORY_SEPARATOR);
 define('CACHE_PATH', ROOT_PATH . 'cache' . DIRECTORY_SEPARATOR);
 define('VENDOR_PATH', ROOT_PATH . 'vendor' . DIRECTORY_SEPARATOR);
 define('PUBLIC_PATH', ROOT_PATH . 'public' . DIRECTORY_SEPARATOR);
@@ -38,6 +40,8 @@ $config = array(
     'path.module' => MODULE_PATH,
     'path.resource' => RESOURCE_PATH,
 );
+
+$c = new \Slim\Container();
 
 $clearCache = false;
 if (isset($_REQUEST['clear_cache'])) {
@@ -66,6 +70,16 @@ $container['view'] = function ($container) {
     return $view;
 };
 
+
+$container['HomepageController'] = function($c){
+    //return new \App\Controllers\HomepageController($c);
+    $view = $c->get("view"); // retrieve the 'view' from the container
+    return new HomepageController($view);
+};
+
+
+//$app->add(new \App\Middleware\AuthMiddleware($container));
+
 // Set up dependencies
 require __DIR__ . '/../../src/dependencies.php';
 
@@ -73,6 +87,6 @@ require __DIR__ . '/../../src/dependencies.php';
 require __DIR__ . '/../../src/middleware.php';
 
 // Register routes
-require __DIR__ . '/../../src/routes.php';
+require ROUTES_PATH . 'web.php';
 
 return $app;
