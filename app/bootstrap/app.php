@@ -73,8 +73,8 @@ $container['view'] = function ($container) {
 
 $container['HomepageController'] = function($c){
     //return new \App\Controllers\HomepageController($c);
-    $view = $c->get("view"); // retrieve the 'view' from the container
-    return new HomepageController($view);
+    //$view = $c->get("view"); // retrieve the 'view' from the container
+    return new HomepageController($c);
 };
 
 

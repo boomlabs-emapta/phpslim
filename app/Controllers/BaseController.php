@@ -8,9 +8,6 @@ class BaseController
 
     public function __construct($container)
     {
-        
-        dump($container);
-        echo"vvvvv";
 
         $this->container = $container;
 
