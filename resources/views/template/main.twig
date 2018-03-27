@@ -1,0 +1,30 @@
+{% htmlcompress %}
+{% spaceless %}
+<!DOCTYPE html>
+<html lang="en">
+    {{ include('template/meta.html') }}
+	<head>
+		<link rel="stylesheet" href="/includes/css/app.css">
+	</head>
+	<body id="body" class="header-fixed">
+
+        {% include "template/header.twig" %}
+
+		{% if not bodyClass %}
+			<div id="main-wrapper">
+
+				{% block content %}{% endblock %}
+
+			</div>
+			<!-- main-wrapper -->
+		{% else %}
+			
+		{% endif %}
+
+		
+		
+	<script src="/includes/js/app.js"></script>
+	</body>
+</html>
+{% endspaceless %}
+{% endhtmlcompress %}
