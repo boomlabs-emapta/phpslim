@@ -9,6 +9,8 @@ use App\Middleware\AuthMiddleware;
 
 $app->group('', function() {
 
+    $this->get('/auth/register','AuthController:index');
+
     $this->get('/','HomepageController:index')->setName('homepage');
 
     // $this->get('/', function ($request, $response, $args) {
@@ -26,4 +28,3 @@ $app->group('', function() {
     });
 
 })->add( new AuthMiddleware($container['router']) );
- 

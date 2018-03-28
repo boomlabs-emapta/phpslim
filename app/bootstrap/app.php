@@ -8,6 +8,7 @@ use Ovo\Helpers\ConfigWorker;
 use Ovo\Factory\AppFactory;
 use App\Source\Decorators\SlimCMS;
 use \App\Controllers\HomepageController;
+use \App\Controllers\AuthController;
 
 session_start();
 
@@ -76,6 +77,12 @@ $container['HomepageController'] = function($c){
     //return new \App\Controllers\HomepageController($c);
     //$view = $c->get("view"); // retrieve the 'view' from the container
     return new HomepageController($c);
+};
+
+$container['AuthController'] = function($c){
+    //return new \App\Controllers\HomepageController($c);
+    //$view = $c->get("view"); // retrieve the 'view' from the container
+    return new AuthController($c);
 };
 
 

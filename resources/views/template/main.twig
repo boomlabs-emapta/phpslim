@@ -8,7 +8,9 @@
 	</head>
 	<body id="body" class="header-fixed">
 
-        {% include "template/header.twig" %}
+        <header>
+            {% include "template/header.twig" %}
+        </header>
 
 		{% if not bodyClass %}
 			<div id="main-wrapper">
@@ -21,9 +23,101 @@
 			
 		{% endif %}
 
+        <footer class="footer">
+            
+            {% include "template/footer.twig" %}
+
+        </footer>
+
 		
 		
-	<script src="/includes/js/app.js"></script>
+	    <script src="/includes/js/app.js"></script>
+		<script>w3.includeHTML();</script>
+		<script>
+			(function() {
+				// Initiate Feature Slider
+				
+				var feature = sliderObj.init(".feature-slider","horizontal",{
+					pagination: {
+						el: '.feature-pagination',
+				        clickable: true,
+				        renderBullet: function (index, className) {
+				          return '<span class="' + className + '"></span>';
+				        }
+					},
+					navigation :  {
+						nextEl: '.feature-next',
+						prevEl: '.feature-prev',
+					},
+					centeredSlides: true,
+					loop: true
+				});
+				
+				// Initiate Content Slider
+				var latest = sliderObj.init(".latest-slider","horizontal",{
+					pagination: {
+						el: '.latest-pagination',
+				        clickable: true,
+				        renderBullet: function (index, className) {
+				          return '<span class="' + className + '"></span>';
+				        }
+					},
+					navigation :  {
+						nextEl: '.latest-next',
+						prevEl: '.latest-prev',
+					},
+					centeredSlides: false,
+					loop: true
+				});
+				
+			    
+			    // Initiate Shows Slider
+				var shows = sliderObj.init(".shows-slider","horizontal",{
+					pagination: {
+						el: '.shows-pagination',
+				        clickable: true,
+				        renderBullet: function (index, className) {
+				          return '<span class="' + className + '"></span>';
+				        }
+					},
+					navigation :  {
+						nextEl: '.shows-next',
+						prevEl: '.shows-prev',
+					},
+					centeredSlides: false,
+					loop: true
+				});
+				
+				// Initiate Gymnastics Slider
+				var shows = sliderObj.init(".movie-slider","horizontal",{
+					pagination: {
+						el: '.movie-pagination',
+				        clickable: true,
+				        renderBullet: function (index, className) {
+				          return '<span class="' + className + '"></span>';
+				        }
+					},
+					navigation :  {
+						nextEl: '.movie-next',
+						prevEl: '.movie-prev',
+					},
+					centeredSlides: false,
+					loop: true
+				});
+				
+				sliderObj.init(".content-list","vertical",{
+				    navigation :  {
+						nextEl: '#list-panel-next',
+						prevEl: '#list-panel-prev',
+					}
+				});
+				sliderObj.sliderResizeHandler();
+			})();
+			
+			setTimeout(function() {
+				document.getElementById("site-loader").className = "hidden";
+			}, 300);		    
+		</script>
 	</body>
 </html>
 {% endspaceless %}
