@@ -9,6 +9,8 @@ use Ovo\Factory\AppFactory;
 use App\Source\Decorators\SlimCMS;
 use \App\Controllers\HomepageController;
 use \App\Controllers\AuthController;
+use \App\Controllers\EventController;
+use \App\Controllers\MusicController;
 
 session_start();
 
@@ -83,6 +85,18 @@ $container['AuthController'] = function($c){
     //return new \App\Controllers\HomepageController($c);
     //$view = $c->get("view"); // retrieve the 'view' from the container
     return new AuthController($c);
+};
+
+$container['EventController'] = function($c){
+    //return new \App\Controllers\HomepageController($c);
+    //$view = $c->get("view"); // retrieve the 'view' from the container
+    return new EventController($c);
+};
+
+$container['MusicController'] = function($c){
+    //return new \App\Controllers\HomepageController($c);
+    //$view = $c->get("view"); // retrieve the 'view' from the container
+    return new MusicController($c);
 };
 
 

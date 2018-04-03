@@ -2,14 +2,14 @@
 {% spaceless %}
 <!DOCTYPE html>
 <html lang="en">
-    {{ include('template/meta.html') }}
+    {{ include('template/partials/meta.html') }}
 	<head>
 		<link rel="stylesheet" href="/includes/css/app.css">
 	</head>
 	<body id="body" class="header-fixed">
 
         <header>
-            {% include "template/header.twig" %}
+            {% include "template/partials/header.twig" %}
         </header>
 
 		{% if not bodyClass %}
@@ -25,7 +25,7 @@
 
         <footer class="footer">
             
-            {% include "template/footer.twig" %}
+            {% include "template/partials/footer.twig" %}
 
         </footer>
 

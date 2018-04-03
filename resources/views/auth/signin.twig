@@ -1,0 +1,46 @@
+{% extends 'template/main.twig' %}
+
+{% block content %}
+
+
+		
+		<!----- LOGIN ---->
+
+
+		<div class="full-width">
+
+		<section class="box-type">
+
+			<div class="registration page">
+				<h2>Sign In</h2>
+
+
+						
+				  <a class="btn social-btn fb"><i class="fab fa-facebook-f"></i> Facebook</a>
+				  <a class="btn  social-btn gl"><i class="fab fa-google-plus"></i> Google</a>
+
+				  <hr>
+
+				<form>
+				  <div class="form-group">
+				    <label for="emailForm">Email</label>
+				    <input type="email" class="form-control" id="emailForm" aria-describedby="emailHelp" >
+				  </div>
+				  <div class="form-group">
+				    <label for="passwordForm">Password</label>
+				    <input type="password" class="form-control" id="passwordForm">
+				  </div>
+
+				  <button type="submit" class="btn signin">Sign In</button>
+
+				  <a href="/forget-password.html" onclick='link(event);' class="forgetpw">Forget your password?</a>
+
+									
+				</form>
+			</div>
+		</section>
+		</div>		
+		
+		<!----- END LOGIN PANEL ----->
+
+{% endblock %}
