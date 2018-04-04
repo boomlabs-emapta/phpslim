@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
 		
 		<!----- SHOW PANEL ---->
 		<div class="full-width">
@@ -16,7 +15,7 @@
 
 				<div class="register-buttons">
 					<a href="/register.html" class="reg-email reg-btn em">Register with Email</a>
-					<a href="/register.html" class="reg-facebook reg-btn fb"><i class="fab fa-facebook-square"></i> Register with Facebook</a>
+					<a href="https://www.facebook.com/dialog/oauth?client_id=159305888085081&client_secret=68acc992351784169334cd4e32a47243&redirect_uri=https://ovophp.io/oauthfacebook/callback&response_type=code&scope=email,public_profile" class="reg-facebook reg-btn fb"><i class="fab fa-facebook-square"></i> Register with Facebook</a>
 
 					<a class="signin" href="signin.html">Already have an account? Sign in here.</a>
 				</div>
@@ -26,6 +25,6 @@
 		</section>
 		</div>		
 		
-		<!----- END SHOW PANEL ----->
+		<!----- END SHOW PANEL ---->
 
 {% endblock %}

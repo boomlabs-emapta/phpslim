@@ -10,8 +10,6 @@ class RadioController extends BaseController
     public function index($request, $response, $args){
 
         $this->data['h1'] = 'Register';
-        
-        dump($this->container);
 
         return $this->container->view->render($response, 'register.twig', $this->data);
         

@@ -11,8 +11,6 @@ class AuthController extends BaseController
         echo 'asdfas';
 
         $this->data['h1'] = 'Register';
-        
-        dump($this->container);
 
         return $this->container->view->render($response, 'auth/register.twig', $this->data);
         
@@ -22,8 +20,6 @@ class AuthController extends BaseController
     public function signin($request, $response, $args){
 
         $this->data['h1'] = 'signin';
-        
-        dump($this->container);
 
         return $this->container->view->render($response, 'auth/signin.twig', $this->data);
         
@@ -33,8 +29,6 @@ class AuthController extends BaseController
     public function forgotpassword($request, $response, $args){
 
         $this->data['h1'] = 'Register';
-        
-        dump($this->container);
 
         return $this->container->view->render($response, 'auth/forgotpassword.twig', $this->data);
         
@@ -44,8 +38,6 @@ class AuthController extends BaseController
     public function registerform($request, $response, $args){
 
         $this->data['h1'] = 'Register';
-        
-        dump($this->container);
 
         return $this->container->view->render($response, 'auth/registerform.twig', $this->data);
         
@@ -55,8 +47,6 @@ class AuthController extends BaseController
     public function registerfan($request, $response, $args){
 
         $this->data['h1'] = 'Register';
-        
-        dump($this->container);
 
         return $this->container->view->render($response, 'auth/registerfan.twig', $this->data);
         

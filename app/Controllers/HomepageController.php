@@ -11,8 +11,6 @@ class HomepageController extends BaseController
         echo 'asdfas';
 
         $this->data['h1'] = 'Dashboard';
-        
-        dump($this->container);
 
         return $this->container->view->render($response, 'home.twig', $this->data);
         

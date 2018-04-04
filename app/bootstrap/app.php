@@ -4,7 +4,6 @@ $GLOBALS['startTime'] = microtime(true);
 use Ovo\Modules\ModuleLoader;
 use Slim\Container;
 use Ovo\Modules\SModuleManager;
-use Ovo\Helpers\ConfigWorker;
 use Ovo\Factory\AppFactory;
 use App\Source\Decorators\SlimCMS;
 use \App\Controllers\HomepageController;
@@ -31,28 +30,12 @@ $classLoader = require VENDOR_PATH . 'autoload.php';
 
 require SLIM_PATH . 'Helpers'.DIRECTORY_SEPARATOR.'functions.php';
 
-/**
- * Load the configuration
- */
-$config = array(
-    'path.app' => APP_PATH,
-    'path.root' => ROOT_PATH,
-    'path.slim' => SLIM_PATH,
-    'path.cache' => CACHE_PATH,
-    'path.public' => PUBLIC_PATH,
-    'path.module' => MODULE_PATH,
-    'path.resource' => RESOURCE_PATH,
-);
-
 $c = new \Slim\Container();
 
 $clearCache = false;
 if (isset($_REQUEST['clear_cache'])) {
     $clearCache = true;
 }
-
-/** include Config files */
-$config += ConfigWorker::init()->all();
 
 // Instantiate the app
 $settings = require __DIR__ . '/../../src/settings.php';

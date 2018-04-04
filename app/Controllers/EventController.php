@@ -11,9 +11,6 @@ class EventController extends BaseController
         echo 'asdfas';
 
         $this->data['h1'] = 'Register';
-        
-        dump($this->container);
-
         return $this->container->view->render($response, '/event/latest.twig', $this->data);
         
         //return $response;   
@@ -23,8 +20,6 @@ class EventController extends BaseController
         echo 'asdfas';
 
         $this->data['h1'] = 'Register';
-        
-        dump($this->container);
 
         return $this->container->view->render($response, '/event/latest.twig', $this->data);
         
@@ -35,8 +30,6 @@ class EventController extends BaseController
         echo 'asdfas';
 
         $this->data['h1'] = 'Register';
-        
-        dump($this->container);
 
         return $this->container->view->render($response, '/event/channels.twig', $this->data);
         
@@ -47,8 +40,6 @@ class EventController extends BaseController
         echo 'asdfas';
 
         $this->data['h1'] = 'Register';
-        
-        dump($this->container);
 
         return $this->container->view->render($response, '/event/channel.twig', $this->data);
         
@@ -59,8 +50,6 @@ class EventController extends BaseController
         echo 'asdfas';
 
         $this->data['h1'] = 'Register';
-        
-        dump($this->container);
 
         return $this->container->view->render($response, '/event/categories.twig', $this->data);
         
@@ -71,8 +60,6 @@ class EventController extends BaseController
         echo 'asdfas';
 
         $this->data['h1'] = 'Register';
-        
-        dump($this->container);
 
         return $this->container->view->render($response, '/event/events.twig', $this->data);
         
@@ -83,8 +70,6 @@ class EventController extends BaseController
         echo 'asdfas';
 
         $this->data['h1'] = 'Register';
-        
-        dump($this->container);
 
         return $this->container->view->render($response, '/event/video.twig', $this->data);
         
@@ -95,8 +80,6 @@ class EventController extends BaseController
         echo 'asdfas';
 
         $this->data['h1'] = 'Register';
-        
-        dump($this->container);
 
         return $this->container->view->render($response, '/event/ondemand.twig', $this->data);
         
